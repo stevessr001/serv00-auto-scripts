@@ -3,7 +3,7 @@ name: Serv00/CT8 Login Tasks
 on:
   workflow_dispatch:
   schedule:
-    - cron: "14 13 */10 * *"  # 每月1号开始，每10天运行一次，运行时间为13:14
+    - cron: "14 13 */6 * *"  # 每月1号开始，每10天运行一次，运行时间为13:14
   # push:
   #   paths-ignore:
   #     - "LICENSE"
@@ -35,8 +35,16 @@ jobs:
           node-version: '20.x'  
   
       - name: Install dependencies  
-        run: npm install puppeteer axios
+        run: |
+          npm instll
+          npm install puppeteer axios
   
+      - name: Update 
+        run: |
+          sudo apt update
+          sudo apt install xvfb -y
+          sudo apt install firefox -y
+
       - name: Login into Serv00/CT8
         run: |  
           set -e  
