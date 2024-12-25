@@ -36,7 +36,8 @@ jobs:
   
       - name: Install dependencies  
         run: |
-          npm instll
+          npm install pnpm -g
+          pnpm instll
           npm install puppeteer axios
   
       - name: Update 
